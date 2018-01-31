@@ -1,0 +1,19 @@
+#服务端口号
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+#声明是eureka server
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+       enableSelfPreservation: false
+#日志输出到指定文件夹下
+logging:
+  pattern:
+    console: "%d - %msg%n"
+  path: D:/logs

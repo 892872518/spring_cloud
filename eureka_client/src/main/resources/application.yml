@@ -1,0 +1,14 @@
+eureka:
+  client:
+  #eureka 的注册服务端地址
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+  #心跳周期
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 5
+server:
+  port: 8762
+spring:
+  application:
+    name: EurekaClient
