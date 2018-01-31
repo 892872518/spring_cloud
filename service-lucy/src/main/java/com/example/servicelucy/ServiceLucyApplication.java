@@ -1,4 +1,4 @@
-package com.example.eureka_client;
+package com.example.servicelucy;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @EnableEurekaClient
 @RestController
-@EnableHystrix//开启断路器
-@EnableHystrixDashboard//开启HystrixDashboard
-public class EurekaClientApplication {
+@EnableHystrix
+@EnableHystrixDashboard
+
+public class ServiceLucyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaClientApplication.class, args);
+		SpringApplication.run(ServiceLucyApplication.class, args);
 	}
-
 	@Value("${server.port}")
 	String port;
 	@RequestMapping("/hi")
@@ -32,5 +32,4 @@ public class EurekaClientApplication {
 	public String hiError(String name) {
 		return "hi,"+name+",sorry,error!";
 	}
-
 }
